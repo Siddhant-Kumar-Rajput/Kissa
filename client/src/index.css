@@ -83,23 +83,9 @@ textarea:focus-visible,
   z-index: 1;
   background-size: cover;
   background-position: center;
-  opacity: 0.85; /* Bright and clearly recognizable background */
+  opacity: 0.15; /* Keeps background art subtle and readable */
   transition: background-image 800ms ease-in-out, opacity 800ms ease-in-out, transform 10s ease-out;
   transform: scale(1.02);
-  pointer-events: none;
-}
-
-.state-bg-overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Max 15% flat dark tint + gradient scrim fading out towards top/middle, darkening bottom 30-40% */
-  background: 
-    linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(20, 16, 14, 0.55) 100%),
-    rgba(20, 16, 14, 0.15);
   pointer-events: none;
 }
 
@@ -117,14 +103,13 @@ textarea:focus-visible,
 
 /* 3. Glassmorphic Cards (WCAG AA Contrast Compliant) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.08); /* 8% white surface tint on top of blur */
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   padding: 24px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-  color: rgba(243, 239, 233, 0.9); /* Near-white (#F3EFE9) at 90% opacity for body text */
   transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
