@@ -17,8 +17,9 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 // State database with cultural accents and predefined cities with coordinates
 const STATES_DATA = {
   "Rajasthan": {
-    accentPrimary: "#E8A33D", // warm saffron/marigold
-    accentSecondary: "#7A2E2E", // deep maroon
+    accentText: "#F2B84D",      // text/highlight on dark bg — lighter saffron
+    accentPrimary: "#E8A33D",  // chip/button fill
+    accentSecondary: "#7A2E2E", // deep tone — borders/shadows only, never text
     wikiTitle: "Rajasthan",
     cities: [
       { name: "Jaipur", lat: 26.9196, lon: 75.7878 },
@@ -31,8 +32,9 @@ const STATES_DATA = {
     ]
   },
   "Kerala": {
-    accentPrimary: "#2F6E5C", // backwater green
-    accentSecondary: "#EFE6D3", // coconut cream
+    accentText: "#5FBF9F",      // text/highlight — lighter backwater green
+    accentPrimary: "#2F6E5C",  // chip/button fill
+    accentSecondary: "#1A3D33", // deep tone — borders only
     wikiTitle: "Kerala",
     cities: [
       { name: "Kochi", lat: 9.9312, lon: 76.2673 },
@@ -45,8 +47,9 @@ const STATES_DATA = {
     ]
   },
   "Goa": {
-    accentPrimary: "#2C7DA0", // sea blue
-    accentSecondary: "#F1E9DA", // whitewashed sand
+    accentText: "#6FB8DE",      // text/highlight — lighter sea blue
+    accentPrimary: "#2C7DA0",  // chip/button fill
+    accentSecondary: "#1B4E63", // deep tone — borders only
     wikiTitle: "Goa",
     cities: [
       { name: "Panaji", lat: 15.4909, lon: 73.8278 },
@@ -59,8 +62,9 @@ const STATES_DATA = {
     ]
   },
   "Tamil Nadu": {
-    accentPrimary: "#C9962C", // temple gold
-    accentSecondary: "#1B4B4A", // deep teal
+    accentText: "#E0B04A",      // text/highlight — lighter temple gold
+    accentPrimary: "#C9962C",  // chip/button fill
+    accentSecondary: "#1B4B4A", // deep tone — borders only
     wikiTitle: "Tamil Nadu",
     cities: [
       { name: "Chennai", lat: 13.0827, lon: 80.2707 },
@@ -73,8 +77,9 @@ const STATES_DATA = {
     ]
   },
   "Uttar Pradesh": {
-    accentPrimary: "#A8452F", // Mughal red sandstone
-    accentSecondary: "#F3EFE9", // marble white
+    accentText: "#D4795C",      // text/highlight — lighter sandstone
+    accentPrimary: "#A8452F",  // chip/button fill
+    accentSecondary: "#6B2A1C", // deep tone — borders only
     wikiTitle: "Uttar Pradesh",
     cities: [
       { name: "Agra", lat: 27.1767, lon: 78.0081 },
@@ -87,8 +92,9 @@ const STATES_DATA = {
     ]
   },
   "Uttarakhand": {
-    accentPrimary: "#3C5B45", // pine green
-    accentSecondary: "#E8ECEA", // snow grey
+    accentText: "#7FA88C",      // text/highlight — lighter pine
+    accentPrimary: "#3C5B45",  // chip/button fill
+    accentSecondary: "#253B2B", // deep tone — borders only
     wikiTitle: "Uttarakhand",
     cities: [
       { name: "Dehradun", lat: 30.3165, lon: 78.0322 },
@@ -101,8 +107,9 @@ const STATES_DATA = {
     ]
   },
   "Himachal Pradesh": {
-    accentPrimary: "#6B7FA3", // dusty lavender-blue
-    accentSecondary: "#4A3B2E", // deodar brown
+    accentText: "#9BADD1",      // text/highlight — lighter lavender-blue
+    accentPrimary: "#6B7FA3",  // chip/button fill
+    accentSecondary: "#3E4E68", // deep tone — borders only
     wikiTitle: "Himachal Pradesh",
     cities: [
       { name: "Shimla", lat: 31.1048, lon: 77.1734 },

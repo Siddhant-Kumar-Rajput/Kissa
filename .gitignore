@@ -23,7 +23,7 @@ Thumbs.db
 
 # Planning & documentation (keep README.md public, hide internal docs)
 *.md
-!README.md
+!/README.md
 
 # Temp scripts
 fix_secret.ps1
