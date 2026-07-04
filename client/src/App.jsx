@@ -111,8 +111,7 @@ export default function App() {
     setSelectedState(stateName);
     const meta = statesList[stateName];
     if (meta) {
-      document.documentElement.style.setProperty('--accent-text',      meta.accentText || meta.accentPrimary);
-      document.documentElement.style.setProperty('--accent-primary',   meta.accentPrimary);
+      document.documentElement.style.setProperty('--accent-primary', meta.accentPrimary);
       document.documentElement.style.setProperty('--accent-secondary', meta.accentSecondary);
       
       // Default to first city in list
@@ -324,7 +323,7 @@ export default function App() {
         {error && (
           <div className="error-banner" style={{
             background: 'rgba(122, 46, 46, 0.9)',
-            borderBottom: '1px solid var(--accent-secondary)',
+            borderBottom: '1px solid var(--accent-primary)',
             padding: '12px 24px',
             display: 'flex',
             alignItems: 'center',
@@ -332,7 +331,7 @@ export default function App() {
             zIndex: 99
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <AlertTriangle size={18} color="var(--accent-text)" />
+              <AlertTriangle size={18} color="var(--accent-primary)" />
               <span style={{ fontSize: '14px', fontWeight: 500 }}>{error}</span>
             </div>
             <button 
@@ -358,7 +357,7 @@ export default function App() {
             maxWidth: '600px',
             margin: '0 auto'
           }}>
-            <h1 style={{ fontSize: '72px', color: 'var(--accent-text)', marginBottom: '8px' }}>Kissa</h1>
+            <h1 style={{ fontSize: '72px', color: 'var(--accent-primary)', marginBottom: '8px' }}>Kissa</h1>
             <p style={{ fontStyle: 'italic', fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--text-muted)', marginBottom: '40px' }}>
               "Every corner has a story to whisper."
             </p>
@@ -475,7 +474,7 @@ export default function App() {
               <button onClick={() => setStep(3)} className="secondary-button" style={{ padding: '8px 16px', fontSize: '14px' }}>
                 Change State
               </button>
-              <h2 style={{ fontSize: '28px', color: 'var(--accent-text)' }}>{selectedState} Explorer</h2>
+              <h2 style={{ fontSize: '28px', color: 'var(--accent-primary)' }}>{selectedState} Explorer</h2>
             </div>
 
             <div style={{ 
@@ -539,13 +538,13 @@ export default function App() {
                       <div 
                         key={item.xid} 
                         className={`glass-card bento-card ${idx === 0 ? 'hero' : ''}`}
-                        style={{ borderBottom: '3px solid var(--accent-secondary)', minHeight: idx === 0 ? '180px' : '120px' }}
+                        style={{ borderBottom: '3px solid var(--accent-primary)', minHeight: idx === 0 ? '180px' : '120px' }}
                       >
                         <div>
                           <h4 style={{ fontSize: idx === 0 ? '20px' : '15px', fontWeight: 600, color: '#FFF', marginBottom: '4px' }}>
                             {item.name || "Heritage Spot"}
                           </h4>
-                          <span style={{ fontSize: '11px', color: 'var(--accent-text)', background: 'rgba(255,255,255,0.06)', padding: '2px 8px', borderRadius: '20px', display: 'inline-block' }}>
+                          <span style={{ fontSize: '11px', color: 'var(--accent-primary)', background: 'rgba(255,255,255,0.06)', padding: '2px 8px', borderRadius: '20px', display: 'inline-block' }}>
                             {item.kinds.split(',')[1] || item.kinds.split(',')[0]}
                           </span>
                         </div>
@@ -553,7 +552,7 @@ export default function App() {
                           href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ' ' + selectedCity)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ color: 'var(--accent-text)', textDecoration: 'none', fontSize: '12px', fontWeight: 500, alignSelf: 'flex-start', marginTop: '10px' }}
+                          style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '12px', fontWeight: 500, alignSelf: 'flex-start', marginTop: '10px' }}
                         >
                           View Map ↗
                         </a>
@@ -574,7 +573,7 @@ export default function App() {
         {step === 5 && (
           <div style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <div className="loading-progress-container">
-              <Sparkles className="animate-spin" size={32} color="var(--accent-text)" style={{ animation: 'spin 2s linear infinite' }} />
+              <Sparkles className="animate-spin" size={32} color="var(--accent-primary)" style={{ animation: 'spin 2s linear infinite' }} />
               <div className="loading-text">{loadingMessage}</div>
               <div className="loading-track">
                 <div className="loading-bar" style={{ width: `${loadingProgress}%` }} />
@@ -636,7 +635,7 @@ export default function App() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
                 
                 {/* Heritage Story */}
-                <div className="glass-card" style={{ borderLeft: '5px solid var(--accent-secondary)' }}>
+                <div className="glass-card" style={{ borderLeft: '5px solid var(--accent-primary)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                     <h2 style={{ fontSize: '24px' }}>Heritage Narrative</h2>
                     <button 
@@ -663,7 +662,7 @@ export default function App() {
                       <div 
                         key={attraction.name}
                         className={`glass-card bento-card ${idx === 0 ? 'hero' : ''}`}
-                        style={{ borderBottom: '3px solid var(--accent-secondary)' }}
+                        style={{ borderBottom: '3px solid var(--accent-primary)' }}
                       >
                         <div>
                           <h3 style={{ fontSize: idx === 0 ? '22px' : '16px', color: '#FFF', marginBottom: '8px' }}>
@@ -678,7 +677,7 @@ export default function App() {
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ 
-                            color: 'var(--accent-text)', 
+                            color: 'var(--accent-primary)', 
                             textDecoration: 'none', 
                             fontSize: '13px', 
                             fontWeight: 600,
@@ -698,7 +697,7 @@ export default function App() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
                 
                 {/* Hidden Gem */}
-                <div className="glass-card" style={{ border: '1px solid var(--accent-secondary)' }}>
+                <div className="glass-card" style={{ border: '1px solid var(--accent-primary)', background: 'rgba(31, 26, 23, 0.9)' }}>
                   <span style={{ 
                     fontSize: '11px', 
                     fontWeight: 700, 
@@ -721,7 +720,7 @@ export default function App() {
                     href={guideData.hiddenGem.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: 'var(--accent-text)', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}
+                    style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}
                   >
                     Locate on Google Maps ↗
                   </a>
@@ -729,7 +728,7 @@ export default function App() {
 
                 {/* Local Tip */}
                 <div className="glass-card">
-                  <h3 style={{ fontSize: '18px', marginBottom: '8px', color: 'var(--accent-text)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
+                  <h3 style={{ fontSize: '18px', marginBottom: '8px', color: 'var(--accent-primary)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
                     Local Tips & Etiquette
                   </h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-primary)' }}>
@@ -742,7 +741,7 @@ export default function App() {
                   <h3 style={{ fontSize: '18px', marginBottom: '8px', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
                     Instagrammable Angle
                   </h3>
-                  <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-text)', marginBottom: '4px' }}>
+                  <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '4px' }}>
                     {guideData.socialMediaPick.name}
                   </h4>
                   <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
@@ -764,7 +763,7 @@ export default function App() {
                     {getNearbyCities().map(city => (
                       <div key={city.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '8px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                         <span style={{ fontSize: '14px', fontWeight: 500 }}>{city.name}</span>
-                        <span style={{ fontSize: '12px', color: 'var(--accent-text)' }}>{city.distance} km away</span>
+                        <span style={{ fontSize: '12px', color: 'var(--accent-primary)' }}>{city.distance} km away</span>
                       </div>
                     ))}
                   </div>
@@ -779,7 +778,7 @@ export default function App() {
           <div className="chat-header">
             <div>
               <h3 style={{ fontSize: '20px' }}>Companion Chat</h3>
-              <span style={{ fontSize: '11px', color: 'var(--accent-text)' }}>Grounded in {selectedCity}</span>
+              <span style={{ fontSize: '11px', color: 'var(--accent-primary)' }}>Grounded in {selectedCity}</span>
             </div>
             <button 
               onClick={() => setChatOpen(false)} 
