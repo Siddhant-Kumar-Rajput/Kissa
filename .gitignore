@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Build outputs
+client/dist/
+
+# Environment / Secrets — NEVER committed
+.env
+.env.*
+*.env
+
+# Cloud Run / GCP artifacts
+.gcloudignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

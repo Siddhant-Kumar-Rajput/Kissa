@@ -1,0 +1,22 @@
+# Never bundle these into the Docker image
+.git
+.gitignore
+.env
+*.env
+*.env.*
+
+# Dev dependencies / source that gets rebuilt
+node_modules
+client/node_modules
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dev files not needed in production
+README.md
+01_user_requirements.md
+02_prd.md
+03_srs.md
+04_business_rules.md
+05_ai_context_prompt.md
